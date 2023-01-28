@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+        <div class="h-100 d-flex" style="padding-top: 20px;">
+            <div>
+            <h2>Teacher: {{ teacher.first_name }} </h2>
+                <table class="table">
+                    <tr class="bg-secondary">
+                        <th scope="col">Availability</th>
+                        <th scope="col">Class</th>
+                    </tr>
+                    <tbody>
+                    {% for available_time in available_times %}
+                        <tr>
+                            <td>{{ available_time.start_date }} - {{ available_time.end_date }}</td>
+                            <td>
+                                <a href="#">Schedule</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
