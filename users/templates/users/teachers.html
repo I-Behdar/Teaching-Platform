@@ -10,6 +10,7 @@
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
                         <th scope="col">Specialization</th>
+                        <th scope="col">Delete</th>
                         <th scope="col">Availability</th>
                     </tr>
                     <tbody>
@@ -18,6 +19,9 @@
                             <td>{{ teacher.first_name }}</td>
                             <td>{{ teacher.last_name }}</td>
                             <td>{{ teacher.specialization }}</td>
+                            <td>
+                                <a href="{% url 'teachers_del' teacher.id %}">Delete</a>
+                            </td>
                             <td>
                                 <a href="{% url 'availability' teacher.id %}">Available Times</a>
                             </td>
