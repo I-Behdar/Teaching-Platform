@@ -32,12 +32,13 @@
                        data-bs-toggle="dropdown"
                        aria-expanded="false"
                     >
-                        Teacher
+                        Teachers
                     </a>
                     <ul class="dropdown-menu"
                         aria-labelledby="navbarDropdown">
                         <li><a href="{% url 'teachers_add' %}" class="dropdown-item">Add Teacher</a></li>
                         <li><a href="{% url 'teachers_list' %}" class="dropdown-item">List of Teachers</a></li>
+                        <li><a href="{% url 'students_list' %}" class="dropdown-item">List of Stdents</a></li>
                     </ul>
                 </li>
                 <li class="nav-item active dropdown">
@@ -47,11 +48,11 @@
                        data-bs-toggle="dropdown"
                        aria-expanded="false"
                     >
-                        Student
+                        Students
                     </a>
                     <ul class="dropdown-menu"
                         aria-labelledby="navbarDropdown">
-                        <li><a href="{% url 'students_list' %}" class="dropdown-item">List of Stdents</a></li>
+                        <li><a href="{% url 'teachers_detail' %}" class="dropdown-item">Schedule a class</a></li>
                     </ul>
                 </li>
                 <li class="nav-item active dropdown">
