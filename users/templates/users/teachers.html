@@ -9,17 +9,27 @@
                     <tr class="bg-secondary">
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Specialization</th>
+                        <th scope="col">Modify</th>
                         <th scope="col">Delete</th>
+                        <th scope="col">Students</th>
                     </tr>
                     <tbody>
                     {% for teacher in teachers %}
                         <tr>
                             <td>{{ teacher.first_name }}</td>
                             <td>{{ teacher.last_name }}</td>
-                            <td>{{ teacher.specialization }}</td>
-                            <td>
-                                <a href="{% url 'teachers_del' teacher.id %}">Delete</a>
+                            <td>{{ teacher.email }}</td>
+                            <td>{{ teacher.get_specialization_display }}</td>
+                            <td class="text-md-center">
+                                <a href="{% url 'teachers_edit' teacher.id %}">Edit</a>
+                            </td>
+                            <td class="text-md-center">
+                                <a href="{% url 'teachers_del' teacher.id %}">Del</a>
+                            </td>
+                            <td class="text-md-center">
+                                <a href="#">List</a>
                             </td>
                         </tr>
                     {% endfor %}

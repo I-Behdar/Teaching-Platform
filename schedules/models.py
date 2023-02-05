@@ -9,4 +9,4 @@ class Schedule(models.Model):
     teacher = models.ManyToManyField(Teacher)
 
     def __str__(self):
-        return f"{self.start_date}, {self.end_date}"
+        return f"{self.teacher} {self.start_date}, {self.end_date}"

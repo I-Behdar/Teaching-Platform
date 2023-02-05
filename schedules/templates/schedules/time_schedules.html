@@ -5,7 +5,7 @@
 <div class="container">
         <div class="h-100 d-flex" style="padding-top: 20px;">
             <div>
-            <h2>Teacher: {{ teacher.first_name }} </h2>
+            <h3>Teacher: {{ teacher.first_name }} {{ teacher.last_name }}</h3>
                 <table class="table">
                     <tr class="bg-secondary">
                         <th scope="col">Availability</th>
@@ -14,7 +14,7 @@
                     <tbody>
                     {% for available_time in available_times %}
                         <tr>
-                            <td>{{ available_time.start_date }} - {{ available_time.end_date }}</td>
+                            <td>{{ available_time.start_date }} {{ available_time.end_date|time }}</td>
                             <td>
                                 <a href="#">Schedule</a>
                             </td>

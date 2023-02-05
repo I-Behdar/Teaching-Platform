@@ -26,8 +26,12 @@ class AddTeachersView(View):
         first_name = request.POST.get("first_name")
         last_name = request.POST.get("last_name")
         email = request.POST.get("email")
+        specialization = request.POST.get("techs")
 
-        Teacher.objects.create(first_name=first_name, last_name=last_name, email=email)
+        if Teacher.objects.filter(email=email).first():
+            return render(request, "users/add_teachers.html", context={"error": "Email already exists!"})
+
+        Teacher.objects.create(first_name=first_name, last_name=last_name, email=email, specialization=specialization)
 
         return redirect('teachers_list')
 
@@ -52,17 +56,23 @@ class DeleteStudentView(View):
         student.delete()
         return redirect('students_list')
 
-#
-# class DeleteTeachersView(View):
-#     def get(self, request):
-#         context = {}
-#         return render(request, "users/add_students.html", context)
-#
-#     def post(self, request):
-#         first_name = request.POST.get("first_name")
-#         last_name = request.POST.get("last_name")
-#         email = request.POST.get("email")
-#
-#         Teacher.objects.create(first_name=first_name, last_name=last_name, email=email)
-#
-#         return redirect('teachers_temp')
+
+class EditTeacherView(View):
+    def get(self, request, teacher_id):
+        teacher = Teacher.objects.get(id=teacher_id)
+        context = {'teacher': teacher}
+        return render(request, "users/edit_teacher.html", context)
+
+    def post(self, request, teacher_id):
+        teacher = Teacher.objects.get(id=teacher_id)
+
+        first_name = request.POST.get("first_name")
+        last_name = request.POST.get("last_name")
+        specialization = request.POST.get("techs")
+
+        teacher.first_name = first_name
+        teacher.last_name = last_name
+        teacher.specialization = specialization
+        teacher.save()
+
+        return redirect('teachers_list')

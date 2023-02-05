@@ -2,28 +2,21 @@
 
 {% block content %}
 
+    <h3>Teacher: {{ teacher.first_name }} {{  teacher.last_name  }}</h3>
+    <p>Email {{ teacher.email }} </p>
+
     <form action="" method="POST">
         {% csrf_token %}
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label for="validationDefault01">First name</label>
                 <input type="text" class="form-control" id="validationDefault01" placeholder="First name"
-                       name="first_name"
-                       required>
+                       name="first_name">
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationDefault02">Last name</label>
                 <input type="text" class="form-control" id="validationDefault02" placeholder="Last name"
-                       name="last_name"
-                       required>
-            </div>
-            <div class="col-md-4 mb-3">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                       name="email"
-                       placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                    else.</small>
+                       name="last_name">
             </div>
             <div class="col-md-4 mb-3">
                 <label for="Specializations">Specialization:</label>
@@ -37,16 +30,6 @@
             </div>
 
         </div>
-        <button class="btn btn-primary" type="submit">Add</button>
+        <button class="btn btn-primary" type="submit">Modify</button>
     </form>
-
-    {% if error %}
-    <div class="alert alert-danger alert-dismissible fade show col-lg-3" role="alert">
-        {{ error }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {% endif %}
-
 {% endblock %}
