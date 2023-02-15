@@ -11,12 +11,19 @@
             <div class="col-md-4 mb-3">
                 <label for="validationDefault01">First name</label>
                 <input type="text" class="form-control" id="validationDefault01" placeholder="First name"
-                       name="first_name">
+                       name="first_name" value="{{ teacher.first_name }}"
+                       onfocus="if (this.value === '{{ teacher.first_name }}') {this.value = '';}"
+                       onblur="if (this.value === '') {this.value = '{{ teacher.first_name }}';}"
+                >
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationDefault02">Last name</label>
                 <input type="text" class="form-control" id="validationDefault02" placeholder="Last name"
-                       name="last_name">
+                       name="last_name" value="{{ teacher.last_name }}"
+                       onfocus="if (this.value === '{{ teacher.last_name }}') {this.value = '';}"
+                       onblur="if (this.value === '') {this.value = '{{ teacher.last_name }}';}"
+                >
+
             </div>
             <div class="col-md-4 mb-3">
                 <label for="Specializations">Specialization:</label>
