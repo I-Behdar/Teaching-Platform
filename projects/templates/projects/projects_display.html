@@ -7,19 +7,19 @@
             <div>
                 <table class="table">
                     <tr class="bg-secondary">
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Specialization</th>
-                        <th scope="col">Availability</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Requirements</th>
+                        <th scope="col">Select</th>
                     </tr>
                     <tbody>
-                    {% for teacher in teachers %}
+                    {% for project in projects %}
                         <tr>
-                            <td>{{ teacher.first_name }}</td>
-                            <td>{{ teacher.last_name }}</td>
-                            <td>{{ teacher.get_specialization_display }}</td>
+                            <td>{{ project.name }}</td>
+                            <td>{{ project.description }}</td>
+                            <td>{{ project.requirements }}</td>
                             <td>
-                                <a href="{% url 'availability' teacher.id %}">Available Times</a>
+                                <a href="#">Select</a>
                             </td>
                         </tr>
                     {% endfor %}

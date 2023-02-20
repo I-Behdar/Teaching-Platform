@@ -6,7 +6,7 @@ from users.models import Teacher
 class Schedule(models.Model):
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
-    teacher = models.ManyToManyField(Teacher)
+    teacher = models.ManyToManyField(Teacher) # this should be ManyToMany, right???
 
     def __str__(self):
         first_teacher = self.teacher.first()
