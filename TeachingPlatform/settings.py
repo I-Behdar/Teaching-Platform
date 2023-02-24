@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'schedules',
     'projects',
     'subjects',
+    'api.apps.ApiConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +87,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "teaching_platform_db",
         "USER": "postgres",
-        "PASSWORD": "123456",
+        "PASSWORD": "postgres",
     }
 }
 

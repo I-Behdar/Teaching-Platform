@@ -12,18 +12,22 @@
                         <th scope="col">Requirements</th>
                         <th scope="col">Select</th>
                     </tr>
-                    <tbody>
-                    {% for project in projects %}
-                        <tr>
-                            <td>{{ project.name }}</td>
-                            <td>{{ project.description }}</td>
-                            <td>{{ project.requirements }}</td>
-                            <td>
-                                <a href="#">Select</a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
+<tbody>
+{% for project in projects %}
+    <tr>
+        <td>{{ project.name }}</td>
+        <td>{{ project.description }}</td>
+        <td>
+            {% for requirement in project.requirements.all %}
+                {{ requirement.name }}<br>
+            {% endfor %}
+        </td>
+        <td>
+            <a href="#">Select</a>
+        </td>
+    </tr>
+{% endfor %}
+</tbody>
                 </table>
             </div>
         </div>
