@@ -19,12 +19,13 @@ class Project(models.Model):
 
 
 class ProjectAssignment(models.Model):
-    date_assigned = models.DateTimeField()
-    deadline = models.DateTimeField()
-    student = models.OneToOneField(Student, on_delete=models.CASCADE)
-    supervisor = models.OneToOneField(Teacher, on_delete=models.CASCADE)
-    project = models.ManyToManyField(Project) # needs to check if manytomany or other relations
+    date_assigned = models.DateField()
+    deadline = models.DateField()
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    supervisor = models.ManyToManyField(Teacher)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
 
     def __str__(self):
-        first_project = self.project.first()
-        return f"{first_project.name} {self.student} {self.supervisor} {self.date_assigned} {self.deadline}"
+        first_supervisor = self.supervisor.first()
+        return f"{self.project} {self.student} {first_supervisor.first_name} " \
+               f"{first_supervisor.last_name} {self.date_assigned} {self.deadline}"

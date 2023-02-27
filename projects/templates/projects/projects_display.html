@@ -17,7 +17,11 @@
                         <tr>
                             <td>{{ project.name }}</td>
                             <td>{{ project.description }}</td>
-                            <td>{{ project.requirements }}</td>
+                            <td>
+                                {% for requirement in project.requirements.all  %}
+                                    {{ requirement.name }}
+                                {% endfor %}
+                            </td>
                             <td>
                                 <a href="#">Select</a>
                             </td>
