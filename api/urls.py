@@ -4,9 +4,9 @@ from .views import ProjectView, ProjectAssignmentView, ScheduleSerializerView, S
 
 urlpatterns = [
     path('projects', ProjectView.as_view()),
-    path('projects', ProjectAssignmentView.as_view()),
-    path('projects', ScheduleSerializerView.as_view()),
-    path('projects', SubjectSerializerView.as_view()),
-    path('projects', StudentSerializerView.as_view()),
-    path('projects', TeacherSerializerView.as_view()),
+    path('projectassignment', ProjectAssignmentView.as_view()),
+    path('schedule', ScheduleSerializerView.as_view()),
+    path('subject', SubjectSerializerView.as_view()),
+    path('student', StudentSerializerView.as_view()),
+    path('teacher', TeacherSerializerView.as_view()),
 ]
