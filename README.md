@@ -11,19 +11,29 @@ $ python -m pip install -r requirements.txt
 
 ## Configuration
 
-- Setup PostgreSQL database
-    - Create the `teaching_platform_db` database
-- Make `.env` file from `.env.template`
-- Run the migrations: `$ python manage.py migrate`
-- Create a superuser: `$ python manage.py createsuperuser`
+Setup a PostgreSQL server and create the `teaching_platform_db` database
+
+Run the migrations: 
+```bash
+python manage.py migrate
+```
+
+You might load data for development
+```bash
+python manage.py loaddata fixtures/users
+```
+
+Make `.env` file from `.env.template`
+
+Create a superuser: 
+```bash
+python manage.py createsuperuser
+```
 
 ## Usage
-
-- Run below command
-
 ```
 $ python manage.py runserver
 ```
 
- - Then click on the url to launch the platform
+Launch the platform at
 **http://127.0.0.1:8000/**
