@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from projects.models import Project
+from TeachingPlatform.projects.models import Project
 
 
 class ProjectsView(View):

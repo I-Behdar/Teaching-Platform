@@ -1,6 +1,6 @@
 from django.urls import path
 
-from users.views import HomeView, TeachersView, AddTeachersView, StudentsView, DeleteStudentView, DeleteTeacherView, \
+from TeachingPlatform.users.views import HomeView, TeachersView, AddTeachersView, StudentsView, DeleteStudentView, DeleteTeacherView, \
     EditTeacherView
 
 urlpatterns = [

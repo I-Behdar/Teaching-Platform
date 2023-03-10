@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from schedules.models import Schedule
+from TeachingPlatform.schedules.models import Schedule
 
 admin.site.register(Schedule)
 

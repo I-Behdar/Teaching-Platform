@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.views import View
 
-from schedules.models import Schedule
-from users.models import Teacher
+from TeachingPlatform.schedules.models import Schedule
+from TeachingPlatform.users.models import Teacher
 
 
 class TeachersDetailView(View):

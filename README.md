@@ -11,7 +11,9 @@ $ python -m pip install -r requirements.txt
 
 ## Configuration
 
-- Create the `teaching_platform_db` database
+- Setup PostgreSQL database
+    - Create the `teaching_platform_db` database
+- Make `.env` file from `.env.template`
 - Run the migrations: `$ python manage.py migrate`
 - Create a superuser: `$ python manage.py createsuperuser`
 

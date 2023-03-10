@@ -15,7 +15,7 @@ import os
 from dotenv import load_dotenv
 
 # take environment variables from .env
-load_dotenv()
+load_dotenv(".env")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,10 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users',
-    'schedules',
-    'projects',
-    'subjects',
+    'TeachingPlatform.users',
+    'TeachingPlatform.schedules',
+    'TeachingPlatform.projects',
+    'TeachingPlatform.subjects',
     'api.apps.ApiConfig',
     'rest_framework',
 ]
@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'TeachingPlatform.wsgi.application'
 
 DATABASES = {
     "default": {
-        "HOST": os.getenv('HOST'),
+        "HOST": os.getenv('DB_HOST'),
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.getenv('NAME'),
-        "USER": os.getenv('USER'),
-        "PASSWORD": os.getenv('PASSWORD'),
+        "NAME": os.getenv('DB_NAME'),
+        "USER": os.getenv('DB_USER'),
+        "PASSWORD": os.getenv('DB_PASSWORD'),
     }
 }
 

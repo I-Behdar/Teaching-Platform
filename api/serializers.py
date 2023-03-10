@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from projects.models import Project, ProjectAssignment
-from schedules.models import Schedule
-from subjects.models import Subject
-from users.models import Student, Teacher
+from TeachingPlatform.projects.models import Project, ProjectAssignment
+from TeachingPlatform.schedules.models import Schedule
+from TeachingPlatform.subjects.models import Subject
+from TeachingPlatform.users.models import Student, Teacher
 
 
 class ProjectSerializer(serializers.ModelSerializer):

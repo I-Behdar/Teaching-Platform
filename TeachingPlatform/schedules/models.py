@@ -1,6 +1,6 @@
 from django.db import models
 
-from users.models import Teacher
+from TeachingPlatform.users.models import Teacher
 
 
 class Schedule(models.Model):

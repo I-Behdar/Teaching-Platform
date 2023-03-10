@@ -1,7 +1,7 @@
 from django.db import models
 
-from subjects.models import Subject
-from users.models import Student, Teacher
+from TeachingPlatform.subjects.models import Subject
+from TeachingPlatform.users.models import Student, Teacher
 
 
 class Project(models.Model):

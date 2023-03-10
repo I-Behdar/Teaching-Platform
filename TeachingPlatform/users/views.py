@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 
-from users.models import Teacher, Student
+from TeachingPlatform.users.models import Teacher, Student
 
 
 class HomeView(View):

@@ -1,9 +1,9 @@
 from rest_framework import generics
 
-from schedules.models import Schedule
-from projects.models import Project, ProjectAssignment
-from subjects.models import Subject
-from users.models import Student, Teacher
+from TeachingPlatform.schedules.models import Schedule
+from TeachingPlatform.projects.models import Project, ProjectAssignment
+from TeachingPlatform.subjects.models import Subject
+from TeachingPlatform.users.models import Student, Teacher
 
 from .serializers import ProjectSerializer, ProjectAssignmentSerializer, ScheduleSerializer, SubjectSerializer, \
     StudentSerializer, TeacherSerializer
