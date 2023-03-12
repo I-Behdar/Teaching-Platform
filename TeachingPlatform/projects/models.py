@@ -5,7 +5,7 @@ from TeachingPlatform.users.models import Student, Teacher
 
 
 class Project(models.Model):
-    name = models.CharField(max_length=128, null=False) # null necessary?
+    name = models.CharField(max_length=128, null=False)
     description = models.TextField()
     date_added = models.DateField()
     accepted_teachers = models.ManyToManyField(Teacher)
