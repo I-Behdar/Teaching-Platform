@@ -1,4 +1,7 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
+
+from TeachingPlatform.users.managers import CustomUserManager
 
 LESSON_TYPE = (
     ("B", "Backend"),
@@ -7,6 +10,19 @@ LESSON_TYPE = (
     ("S", "System Administration"),
     ("C", "Cloud Engineering"),
 )
+
+
+class CustomUser(AbstractUser):
+    email = models.EmailField("email address", unique=True)
+    username = None
+
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS: list[str] = []
+
+    objects = CustomUserManager()
+
+    def __str__(self):
+        return self.email
 
 
 class Student(models.Model):
