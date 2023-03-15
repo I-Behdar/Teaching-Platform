@@ -1,0 +1,24 @@
+[
+    {
+        "model": "projects.Project",
+        "pk": 5,
+        "fields": {
+            "name": "Weather app",
+            "description": "Weather forcast app written in python",
+            "date_added": "2023-03-12",
+            "accepted_teachers": [3],
+            "requirements": [9]
+        }
+    },
+    {
+        "model": "projects.Project",
+        "pk": 6,
+        "fields": {
+            "name": "Bank app",
+            "description": "Bank app written in django",
+            "date_added": "2023-03-12",
+            "accepted_teachers": [4],
+            "requirements": [10]
+        }
+    }
+]

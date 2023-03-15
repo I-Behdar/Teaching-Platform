@@ -1,0 +1,18 @@
+[
+{
+        "model": "subjects.Subject",
+        "pk": 9,
+        "fields": {
+            "name": "Advanced python",
+            "comments": "Knowledge of advanced python needed to complete this project"
+        }
+    },
+        {
+        "model": "subjects.Subject",
+        "pk": 10,
+        "fields": {
+            "name": "Advanced Django",
+            "comments": "Knowledge of advanced django needed to complete this project"
+        }
+    }
+]
