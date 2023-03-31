@@ -29,7 +29,7 @@
                                 <a href="{% url 'teachers_del' teacher.id %}">Del</a>
                             </td>
                             <td class="text-md-center">
-                                <a href="#">List</a>
+                                <a href="{% url 'students_list' teacher.id %}">List</a>
                             </td>
                         </tr>
                     {% endfor %}

@@ -50,6 +50,14 @@ class StudentsView(View):
         return render(request, "users/students.html", context)
 
 
+class StudentsListView(View):
+    def get(self, request, teacher_id):
+        teacher = Teacher.objects.get(id=teacher_id)
+        students = teacher.student_rel.all()
+        context = {'teacher': teacher, 'students': students}
+        return render(request, 'users/students_list.html', context)
+
+
 class DeleteStudentView(View):
     def get(self, request, student_id):
         student = Student.objects.get(id=student_id)
@@ -76,3 +84,10 @@ class EditTeacherView(View):
         teacher.save()
 
         return redirect('teachers_list')
+
+
+# class StudentDashboardView(View):
+#     def get(self, request, student_id):
+#         students = Student.objects.get(id=student_id)
+#         context = {'students': students}
+#         return render(request, "users/students_dashboard.html", context)

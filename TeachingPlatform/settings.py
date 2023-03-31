@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'TeachingPlatform.schedules',
     'TeachingPlatform.projects',
     'TeachingPlatform.subjects',
+    'TeachingPlatform.accounts',
     'api.apps.ApiConfig',
     'rest_framework',
 ]
