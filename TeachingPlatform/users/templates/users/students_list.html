@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="h-100 d-flex" style="padding-top: 20px;">
+            <div>
+                <h3>Teacher: {{ teacher.first_name }} {{ teacher.last_name }}</h3>
+                <table class="table">
+                    <tr class="bg-secondary">
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Projects</th>
+                    </tr>
+                    <tbody>
+                    {% for student in students %}
+                        <tr>
+                            <td>{{ student.first_name }}</td>
+                            <td>{{ student.last_name }}</td>
+                            <td>{{ student.email }}</td>
+                            <td>
+                                {% for assignment in student.projectassignment_set.all %}
+                                    {{ assignment.project.name }}<br>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

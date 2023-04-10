@@ -1,0 +1,24 @@
+[
+  {
+        "model": "users.Student",
+        "pk": 1,
+        "fields": {
+            "first_name": "John",
+            "last_name": "Doe",
+            "date_joined": "2019-01-01",
+            "email": "john_doe@mail.com",
+            "lesson_type": "B"
+        }
+    },
+    {
+        "model": "users.Student",
+        "pk": 2,
+        "fields": {
+            "first_name": "Peter",
+            "last_name": "Smith",
+            "date_joined": "2021-02-04",
+            "email": "peter@gmail.com",
+            "lesson_type": "C"
+        }
+    }
+]

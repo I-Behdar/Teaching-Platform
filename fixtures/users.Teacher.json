@@ -1,0 +1,24 @@
+[
+  {
+        "model": "users.Teacher",
+        "pk": 3,
+        "fields": {
+            "first_name": "Julia",
+            "last_name": "Roberts",
+            "specialization": "B",
+            "email": "julia.roberts@yahoo.com",
+            "student": [1]
+        }
+    },
+    {
+        "model": "users.Teacher",
+        "pk": 4,
+        "fields": {
+            "first_name": "Hans",
+            "last_name": "Peterson",
+            "specialization": "C",
+            "email": "hpet@yahoo.com",
+            "student": [2]
+        }
+    }
+]
